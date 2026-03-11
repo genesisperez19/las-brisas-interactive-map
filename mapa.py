@@ -22,6 +22,7 @@ marker_cluster = MarkerCluster().add_to(mapa)
 propiedades = [
     {
         "nombre": "Paseo Caribe",
+        "localizacion": "Condado, PR",
         "lat": 18.462101073029388,
         "lon": -66.0855394647402,
         "descripcion": "Paseo Caribe is a dream come true with a blend of retail, restaurants,"
@@ -39,6 +40,7 @@ propiedades = [
     },
     {
         "nombre": "Dorado Property",
+        "localizacion": "Dorado, PR",
         "lat": 18.4588,
         "lon": -66.2677,
         "descripcion": "Casa moderna con piscina y acceso privado.",
@@ -51,7 +53,8 @@ for prop in propiedades:
 
     html_popup = f"""
     <div style="width:250px">
-        <h4>{prop['nombre']}</h4>
+        <h3>{prop['nombre']}</h3>
+        <h4>{prop['localizacion']}</h4>
         <img src="{prop['imagen']}" width="100%" style="border-radius:8px;">
         <p>{prop['descripcion']}</p>
         <a href="{prop['link']}" target="_blank" 
