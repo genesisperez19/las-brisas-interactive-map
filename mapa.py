@@ -91,7 +91,7 @@ for _, prop in df.iterrows():
     # Info extra (opcional)
     extra_info = f"""
     <p><strong>Category:</strong> {prop['category']}</p>
-    <p><strong>Sq Ft:</strong> {prop['sq_ft']}</p>
+    <p><strong>Sq Ft:</strong> {prop['sq_ft']:,}</p>
     <p><strong>Available:</strong> {prop['available_space']}</p>
     <p><strong>Type:</strong> {prop['sale_lease']}</p>
     <p><strong>Cost:</strong> ${prop['cost']}</p>
