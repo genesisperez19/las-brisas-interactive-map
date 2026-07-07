@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c559abd2c9a89d1fb67bee53f9210ff9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c559abd2c9a89d1fb67bee53f9210ff9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c559abd2c9a89d1fb67bee53f9210ff9 = L.map(
+                "map_c559abd2c9a89d1fb67bee53f9210ff9",
+                {
+                    center: [18.2208, -66.5901],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": true,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_c559abd2c9a89d1fb67bee53f9210ff9);
+
+            
+
+        
+    
+            var tile_layer_8cfbbdac5963f83aa4eed5e3cd638c5c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8cfbbdac5963f83aa4eed5e3cd638c5c.addTo(map_c559abd2c9a89d1fb67bee53f9210ff9);
+        
+    
+            var marker_cluster_ebeba7ccf62071933284f782555f0e05 = L.markerClusterGroup(
+                {
+  "maxClusterRadius": 25,
+  "disableClusteringAtZoom": 15,
+}
+            );
+        
+    
+            var marker_1492d8fc61c3224f93d9d96093219753 = L.marker(
+                [18.4623223929817, -66.0855545441762],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_d151094a3af3e2e599f9677f648c72b1 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_30a0b83975ac9c9c5618dca3b64493d0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_bf5cccd2c762f079c574af31b554b908 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+UEFTRU8gQ0FSSUJFPC9oMz4KICAgICAgICA8aDQgc3R5bGU9Im1hcmdpbjo0cHggMDsiPgogICAgICAgICAgICA8YSBocmVmPSJodHRwczovL3d3dy5nb29nbGUuY29tL21hcHMvZGlyLz9hcGk9MSZkZXN0aW5hdGlvbj0xOC40NjIzMjIzOTI5ODE3LC02Ni4wODU1NTQ1NDQxNzYyIiB0YXJnZXQ9Il9ibGFuayIgc3R5bGU9InRleHQtZGVjb3JhdGlvbjpub25lOyBjb2xvcjojMmI2Y2IwOyI+CiAgICAgICAgICAgICAgICBDb25kYWRvLCBQUiAwMDkwNwogICAgICAgICAgICA8L2E+CiAgICAgICAgPC9oND4KICAgICAgICAKICAgICAgICA8ZGl2IGNsYXNzPSJzbGlkZXNob3ciPgogICAgICAgICAgICA8aW1nIHNyYz0iaHR0cHM6Ly9nZW5lc2lzcGVyZXoxOS5naXRodWIuaW8vbGFzLWJyaXNhcy1pbnRlcmFjdGl2ZS1tYXAvaW1hZ2VzL1BBU0VPX0NBUklCRS9wcm9wZXJ0eV9pbWFnZXMvaW1hZ2VfMS5QTkciIGNsYXNzPSJzbGlkZSIgc3R5bGU9IndpZHRoOjEwMCU7IGRpc3BsYXk6bm9uZTsgYm9yZGVyLXJhZGl1czo4cHg7Ij4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPHNjcmlwdD4KICAgICAgICB2YXIgc2xpZGVzID0gZG9jdW1lbnQuY3VycmVudFNjcmlwdC5wcmV2aW91c0VsZW1lbnRTaWJsaW5nLnF1ZXJ5U2VsZWN0b3JBbGwoJy5zbGlkZScpOwogICAgICAgIGxldCBpbmRleCA9IDA7CiAgICAgICAgZnVuY3Rpb24gc2hvd1NsaWRlcygpIHsKICAgICAgICAgICAgc2xpZGVzLmZvckVhY2gocyA9PiBzLnN0eWxlLmRpc3BsYXkgPSAibm9uZSIpOwogICAgICAgICAgICBzbGlkZXNbaW5kZXhdLnN0eWxlLmRpc3BsYXkgPSAiYmxvY2siOwogICAgICAgICAgICBpbmRleCA9IChpbmRleCArIDEpICUgc2xpZGVzLmxlbmd0aDsKICAgICAgICAgICAgc2V0VGltZW91dChzaG93U2xpZGVzLCAxNTAwKTsKICAgICAgICB9CiAgICAgICAgc2hvd1NsaWRlcygpOwogICAgICAgIDwvc2NyaXB0PgogICAgICAgIAogICAgICAgIDxwPlBhc2VvIENhcmliZSBpcyBhIGRyZWFtIGNvbWUgdHJ1ZSB3aXRoIGEgYmxlbmQgb2YgcmV0YWlsLCByZXN0YXVyYW50cywgcGVyc29uYWwgc2VydmljZXMsIGFuZCB3b3Jrc3BhY2VzLiAgUGFzZW8gQ2FyaWJlIG9mZmVycyBzaGFyZWQgb2ZmaWNlIHNwYWNlcyB3aXRoIHNob3J0IGFuZCBsb25nLXRlcm0gbGVhc2luZyBhdmFpbGFibGUgKGhvdXJseSBvciBtb250aGx5KS4gCgpUaGVzZSBzdGF0ZS1vZi10aGUtYXJ0IHNoYXJlZCBvZmZpY2Ugc3BhY2VzIHJhbmdlIGZyb20gMTY1IHNxLiBmdC4gdG8gNTAwIHNxLiBmdC4gYW5kIGFyZSBjb25jZXB0dWFsaXplZCB0byBwcm9tb3RlIGNvbGxhYm9yYXRpb24gYW5kIHRoZSBmbG93IG9mIGlkZWFzLCB3aGlsZSBzdGlsbCBoZWxwaW5nIG1haW50YWluIHByaXZhY3kuIFRoaXMgb2NlYW5mcm9udCBvYXNpcyBmb3IgZW50ZXJ0YWlubWVudCwgc2hvcHBpbmcsIGFuZCB3b3Jrc3BhY2VzIGlzIGFuIGlkZWFsIGh1YiBmb3IgcGVvcGxlIHRvIGRyZWFtLiBQYXNlbyBDYXJpYmUgaXMgYSAxMjAsMDAwIHNxIGZ0IHZpYnJhbnQgc3BhY2UgdG8gc29jaWFsaXplLCBjb25uZWN0LCBhbmQgaW5zcGlyZSB5b3Ugd2l0aCBpdHMgc3R1bm5pbmcgb2NlYW5mcm9udCB2aWV3cy4gU3RlcHMgYXdheSBmcm9tIDQ3NSByZXNpZGVudGlhbCB1bml0cywgMjUwIGhvdGVsIHJvb21zLCBhbmQgaHVuZHJlZHMgb2YgcmVzdGF1cmFudHMsIHJldGFpbHMsIGFuZCBhdHRyYWN0aW9ucyBhbGwgYXJvdW5kIENvbmRhZG8sIElzbGEgVmVyZGUsIGFuZCB0aGUgaG90IHNwb3RzIG9mIFNhbiBKdWFuLjwvcD4KICAgICAgICAKICAgIDxwPjxzdHJvbmc+Q2F0ZWdvcnk6PC9zdHJvbmc+IE1JWEVEIFJFVEFJTCBTSE9QUElORyBDRU5URVJTICYgT0ZGSUNFPC9wPgogICAgPHA+PHN0cm9uZz5TcSBGdDo8L3N0cm9uZz4gMTIwLDAwMC4wPC9wPgogICAgPHA+PHN0cm9uZz5BdmFpbGFibGU6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+VHlwZTo8L3N0cm9uZz4gbmFuPC9wPgogICAgPHA+PHN0cm9uZz5Db3N0Ojwvc3Ryb25nPiAkbmFuPC9wPgogICAgCiAgICAgICAgCiAgICA8YSBocmVmPSJtYWlsdG86c2FsZXNAbGFzYnJpc2FzcHJvcGVydHkuY29tP3N1YmplY3Q9SW5xdWlyeSUyMGFib3V0JTIwUEFTRU8lMjBDQVJJQkUmYm9keT1IZWxsbyUyQyUyMEklMjBhbSUyMGludGVyZXN0ZWQlMjBpbiUyMFBBU0VPJTIwQ0FSSUJFJTIwbG9jYXRlZCUyMGF0JTIwQ29uZGFkbyUyQyUyMFBSJTIwMDA5MDcuIiB0YXJnZXQ9Il9ibGFuayIKICAgICAgIHN0eWxlPSIKICAgICAgICAgICAgZGlzcGxheTppbmxpbmUtYmxvY2s7CiAgICAgICAgICAgIG1hcmdpbi10b3A6MTBweDsKICAgICAgICAgICAgcGFkZGluZzo4cHggMTJweDsKICAgICAgICAgICAgYmFja2dyb3VuZDojMDA4M2M0OwogICAgICAgICAgICBjb2xvcjp3aGl0ZTsKICAgICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOm5vbmU7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6NnB4OwogICAgICAgICAgICBmb250LXNpemU6MTJweDsKICAgICAgICAgICAgZm9udC13ZWlnaHQ6NTAwOwogICAgICAgIj4KICAgICAgIFJlcXVlc3QgUHJvcGVydHkKICAgIDwvYT4KICAgIAogICAgPC9kaXY+CiAgICA=" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_30a0b83975ac9c9c5618dca3b64493d0.setContent(i_frame_bf5cccd2c762f079c574af31b554b908);
+            
+        
+
+        marker_1492d8fc61c3224f93d9d96093219753.bindPopup(popup_30a0b83975ac9c9c5618dca3b64493d0)
+        ;
+
+        
+    
+    
+                marker_1492d8fc61c3224f93d9d96093219753.setIcon(div_icon_d151094a3af3e2e599f9677f648c72b1);
+            
+    
+            var marker_dbb11ef655a2fcf50af906a96141ffbd = L.marker(
+                [18.4097058658761, -66.0572139063897],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_45ec85bedc9a62c165793570fe20e072 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_c6d456477b0a056b91144834bbaaa1c7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_884d0e1ee1ffc3be84b2b5269d4c5fe5 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+NjUyIE1PTlRFIFBMQVpBIC8gRUwgTU9OVEUgVE9XTiBDRU5URVI8L2gzPgogICAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjRweCAwOyI+CiAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vbWFwcy9kaXIvP2FwaT0xJmRlc3RpbmF0aW9uPTE4LjQwOTcwNTg2NTg3NjEsLTY2LjA1NzIxMzkwNjM4OTciIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0idGV4dC1kZWNvcmF0aW9uOm5vbmU7IGNvbG9yOiMyYjZjYjA7Ij4KICAgICAgICAgICAgICAgIEhhdG8gUmV5LCBQUiAwMDkxOAogICAgICAgICAgICA8L2E+CiAgICAgICAgPC9oND4KICAgICAgICAKICAgICAgICA8ZGl2IGNsYXNzPSJzbGlkZXNob3ciPgogICAgICAgICAgICA8aW1nIHNyYz0iaHR0cHM6Ly9nZW5lc2lzcGVyZXoxOS5naXRodWIuaW8vbGFzLWJyaXNhcy1pbnRlcmFjdGl2ZS1tYXAvaW1hZ2VzLzY1Ml9NT05URV9QTEFaQS9wcm9wZXJ0eV9pbWFnZXMvaW1hZ2VfMS5QTkciIGNsYXNzPSJzbGlkZSIgc3R5bGU9IndpZHRoOjEwMCU7IGRpc3BsYXk6bm9uZTsgYm9yZGVyLXJhZGl1czo4cHg7Ij4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPHNjcmlwdD4KICAgICAgICB2YXIgc2xpZGVzID0gZG9jdW1lbnQuY3VycmVudFNjcmlwdC5wcmV2aW91c0VsZW1lbnRTaWJsaW5nLnF1ZXJ5U2VsZWN0b3JBbGwoJy5zbGlkZScpOwogICAgICAgIGxldCBpbmRleCA9IDA7CiAgICAgICAgZnVuY3Rpb24gc2hvd1NsaWRlcygpIHsKICAgICAgICAgICAgc2xpZGVzLmZvckVhY2gocyA9PiBzLnN0eWxlLmRpc3BsYXkgPSAibm9uZSIpOwogICAgICAgICAgICBzbGlkZXNbaW5kZXhdLnN0eWxlLmRpc3BsYXkgPSAiYmxvY2siOwogICAgICAgICAgICBpbmRleCA9IChpbmRleCArIDEpICUgc2xpZGVzLmxlbmd0aDsKICAgICAgICAgICAgc2V0VGltZW91dChzaG93U2xpZGVzLCAxNTAwKTsKICAgICAgICB9CiAgICAgICAgc2hvd1NsaWRlcygpOwogICAgICAgIDwvc2NyaXB0PgogICAgICAgIAogICAgICAgIDxwPkxvY2F0ZWQgaW4gdGhlIGhlYXJ0IG9mIFNhbiBKdWFu4oCZcyBtZXRyb3BvbGl0YW4gYXJlYSBvZiBIYXRvIFJleSwgRWwgTW9udGUgVG93biBDZW50ZXLigJlzIG1peGVkIHRlbmFudCBhdG1vc3BoZXJlIGluY2x1ZGVzIGV2ZXJ5dGhpbmcgeW91ciBjdXN0b21lcnMgYW5kIGVtcGxveWVlcyBuZWVkIGZvciBlYXNlIG9mIGRhaWx5IGxpZmUgaW5jbHVkaW5nIGZpdG5lc3MsIGdyb2NlcmllcywgYmVhdXR5LCBlYXRlcmllcywgYW5kIG1vcmUuIFdpdGggYW1wbGUgbW9udGhseSByZW50YWwgcGFya2luZyBzcGFjZXMgZm9yIHRlbmFudHMsIHBsZW50eSBvZiB2aXNpdG9yIHBhcmtpbmcsIGFuZCBjb21wZXRpdGl2ZSBiYXNlIHJlbnRhbCByYXRlcywgc2VlIGhvdyB5b3VyIGJ1c2luZXNzIGNhbiBleGNlbCBhdCBFbCBNb250ZSBUb3duIENlbnRlci48L3A+CiAgICAgICAgCiAgICA8cD48c3Ryb25nPkNhdGVnb3J5Ojwvc3Ryb25nPiBNSVhFRCBSRVRBSUwgU0hPUFBJTkcgQ0VOVEVSUyAmIE9GRklDRTwvcD4KICAgIDxwPjxzdHJvbmc+U3EgRnQ6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+QXZhaWxhYmxlOjwvc3Ryb25nPiBuYW48L3A+CiAgICA8cD48c3Ryb25nPlR5cGU6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+Q29zdDo8L3N0cm9uZz4gJG5hbjwvcD4KICAgIAogICAgICAgIAogICAgPGEgaHJlZj0ibWFpbHRvOnNhbGVzQGxhc2JyaXNhc3Byb3BlcnR5LmNvbT9zdWJqZWN0PUlucXVpcnklMjBhYm91dCUyMDY1MiUyME1PTlRFJTIwUExBWkElMjAvJTIwRUwlMjBNT05URSUyMFRPV04lMjBDRU5URVImYm9keT1IZWxsbyUyQyUyMEklMjBhbSUyMGludGVyZXN0ZWQlMjBpbiUyMDY1MiUyME1PTlRFJTIwUExBWkElMjAvJTIwRUwlMjBNT05URSUyMFRPV04lMjBDRU5URVIlMjBsb2NhdGVkJTIwYXQlMjBIYXRvJTIwUmV5JTJDJTIwUFIlMjAwMDkxOC4iIHRhcmdldD0iX2JsYW5rIgogICAgICAgc3R5bGU9IgogICAgICAgICAgICBkaXNwbGF5OmlubGluZS1ibG9jazsKICAgICAgICAgICAgbWFyZ2luLXRvcDoxMHB4OwogICAgICAgICAgICBwYWRkaW5nOjhweCAxMnB4OwogICAgICAgICAgICBiYWNrZ3JvdW5kOiMwMDgzYzQ7CiAgICAgICAgICAgIGNvbG9yOndoaXRlOwogICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246bm9uZTsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czo2cHg7CiAgICAgICAgICAgIGZvbnQtc2l6ZToxMnB4OwogICAgICAgICAgICBmb250LXdlaWdodDo1MDA7CiAgICAgICAiPgogICAgICAgUmVxdWVzdCBQcm9wZXJ0eQogICAgPC9hPgogICAgCiAgICA8L2Rpdj4KICAgIA==" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_c6d456477b0a056b91144834bbaaa1c7.setContent(i_frame_884d0e1ee1ffc3be84b2b5269d4c5fe5);
+            
+        
+
+        marker_dbb11ef655a2fcf50af906a96141ffbd.bindPopup(popup_c6d456477b0a056b91144834bbaaa1c7)
+        ;
+
+        
+    
+    
+                marker_dbb11ef655a2fcf50af906a96141ffbd.setIcon(div_icon_45ec85bedc9a62c165793570fe20e072);
+            
+    
+            var marker_058623d14214fd9f1ea77c5f568015ad = L.marker(
+                [18.4156057781071, -66.1027564765296],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_2dda9d896b8781615fd8292c206d3175 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_ac1606a1d80a2be2af92187baf726a90 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_036c10ce44e4cdb3508ad88be918afac = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+T05FIEFMTElBTkNFIC0gQ0xBU1MgQSBPRkZJQ0UgQlVJTERJTkc8L2gzPgogICAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjRweCAwOyI+CiAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vbWFwcy9kaXIvP2FwaT0xJmRlc3RpbmF0aW9uPTE4LjQxNTYwNTc3ODEwNzEsLTY2LjEwMjc1NjQ3NjUyOTYiIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0idGV4dC1kZWNvcmF0aW9uOm5vbmU7IGNvbG9yOiMyYjZjYjA7Ij4KICAgICAgICAgICAgICAgIEd1YXluYWJvLCBQUiAwMDk2NgogICAgICAgICAgICA8L2E+CiAgICAgICAgPC9oND4KICAgICAgICAKICAgICAgICA8ZGl2IGNsYXNzPSJzbGlkZXNob3ciPgogICAgICAgICAgICA8aW1nIHNyYz0iaHR0cHM6Ly9nZW5lc2lzcGVyZXoxOS5naXRodWIuaW8vbGFzLWJyaXNhcy1pbnRlcmFjdGl2ZS1tYXAvaW1hZ2VzL09ORV9BTExJQU5DRS9wcm9wZXJ0eV9pbWFnZXMvaW1hZ2VfMS5QTkciIGNsYXNzPSJzbGlkZSIgc3R5bGU9IndpZHRoOjEwMCU7IGRpc3BsYXk6bm9uZTsgYm9yZGVyLXJhZGl1czo4cHg7Ij4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPHNjcmlwdD4KICAgICAgICB2YXIgc2xpZGVzID0gZG9jdW1lbnQuY3VycmVudFNjcmlwdC5wcmV2aW91c0VsZW1lbnRTaWJsaW5nLnF1ZXJ5U2VsZWN0b3JBbGwoJy5zbGlkZScpOwogICAgICAgIGxldCBpbmRleCA9IDA7CiAgICAgICAgZnVuY3Rpb24gc2hvd1NsaWRlcygpIHsKICAgICAgICAgICAgc2xpZGVzLmZvckVhY2gocyA9PiBzLnN0eWxlLmRpc3BsYXkgPSAibm9uZSIpOwogICAgICAgICAgICBzbGlkZXNbaW5kZXhdLnN0eWxlLmRpc3BsYXkgPSAiYmxvY2siOwogICAgICAgICAgICBpbmRleCA9IChpbmRleCArIDEpICUgc2xpZGVzLmxlbmd0aDsKICAgICAgICAgICAgc2V0VGltZW91dChzaG93U2xpZGVzLCAxNTAwKTsKICAgICAgICB9CiAgICAgICAgc2hvd1NsaWRlcygpOwogICAgICAgIDwvc2NyaXB0PgogICAgICAgIAogICAgICAgIDxwPkxvY2F0ZWQgaW4gdGhlIHByZXN0aWdpb3VzIE1ldHJvIE9mZmljZSBQYXJrIGluIEd1YXluYWJvLCBPbmUgQWxsaWFuY2UgaXMgYSBwcmVtaWVyIENsYXNzIEEgT2ZmaWNlIEJ1aWxkaW5nIG9mZmVyaW5nIGEgcHJvZmVzc2lvbmFsIGJ1c2luZXNzIGVudmlyb25tZW50IHdpdGggbW9kZXJuIGFtZW5pdGllcyBhbmQgYW4gZXhjZXB0aW9uYWwgbG9jYXRpb24uIFRoZSBidWlsZGluZyBmZWF0dXJlcyBhcHByb3hpbWF0ZWx5IDgyLDg4MCByZW50YWJsZSBzcXVhcmUgZmVldCBvZiBvZmZpY2Ugc3BhY2Ugd2l0aGluIGZvdXIgc3RvcmllcyBhbmQgb2ZmZXJzIDQwMCsgZGVkaWNhdGVkIHBhcmtpbmcgc3BhY2VzIGZvciB0ZW5hbnRzIGFuZCB2aXNpdG9ycy4gT25lIEFsbGlhbmNlIGlzIGEgcHJpbWUgcHJvdmlkaW5nIGNvbnZlbmllbnQgYWNjZXNzIHRvIGRpbmluZywgcmV0YWlsLCBhbmQgdHJhbnNpdCBvcHRpb25zIHRoYXQgZW5oYW5jZSB0aGUgd29ya2RheSBleHBlcmllbmNlIGluY2x1ZGluZyBwcm94aW1pdHkgdG8gU2FuIFBhdHJpY2lvIFBsYXphIGFjY2Vzc2libGUgdmlhIHRoZSBTYW4gUGF0cmljaW8gUGxhemEgVHJvbGxleS4gT25lIEFsbGlhbmNlIG9mZmVycyBlYXN5IGFjY2VzcyB0byBwdWJsaWMgdHJhbnNpdCwgbWFraW5nIGNvbW11dGluZyBzZWFtbGVzcyBmb3IgcHJvZmVzc2lvbmFscy4gV2l0aCBpdHMgcHJpbWUgbG9jYXRpb24sIHVwc2NhbGUgYW1lbml0aWVzLCBhbmQgZXhjZWxsZW50IGNvbm5lY3Rpdml0eSwgT25lIEFsbGlhbmNlIGlzIGFuIGlkZWFsIGNob2ljZSBmb3IgYnVzaW5lc3NlcyBsb29raW5nIHRvIGVzdGFibGlzaCBvciBleHBhbmQgb3BlcmF0aW9ucyBpbiBHdWF5bmFib+KAmXMgdGhyaXZpbmcgY29tbWVyY2lhbCBkaXN0cmljdC48L3A+CiAgICAgICAgCiAgICA8cD48c3Ryb25nPkNhdGVnb3J5Ojwvc3Ryb25nPiBNSVhFRCBSRVRBSUwgU0hPUFBJTkcgQ0VOVEVSUyAmIE9GRklDRTwvcD4KICAgIDxwPjxzdHJvbmc+U3EgRnQ6PC9zdHJvbmc+IDgyLDg4MC4wPC9wPgogICAgPHA+PHN0cm9uZz5BdmFpbGFibGU6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+VHlwZTo8L3N0cm9uZz4gbmFuPC9wPgogICAgPHA+PHN0cm9uZz5Db3N0Ojwvc3Ryb25nPiAkbmFuPC9wPgogICAgCiAgICAgICAgCiAgICA8YSBocmVmPSJtYWlsdG86c2FsZXNAbGFzYnJpc2FzcHJvcGVydHkuY29tP3N1YmplY3Q9SW5xdWlyeSUyMGFib3V0JTIwT05FJTIwQUxMSUFOQ0UlMjAtJTIwQ0xBU1MlMjBBJTIwT0ZGSUNFJTIwQlVJTERJTkcmYm9keT1IZWxsbyUyQyUyMEklMjBhbSUyMGludGVyZXN0ZWQlMjBpbiUyME9ORSUyMEFMTElBTkNFJTIwLSUyMENMQVNTJTIwQSUyME9GRklDRSUyMEJVSUxESU5HJTIwbG9jYXRlZCUyMGF0JTIwR3VheW5hYm8lMkMlMjBQUiUyMDAwOTY2LiIgdGFyZ2V0PSJfYmxhbmsiCiAgICAgICBzdHlsZT0iCiAgICAgICAgICAgIGRpc3BsYXk6aW5saW5lLWJsb2NrOwogICAgICAgICAgICBtYXJnaW4tdG9wOjEwcHg7CiAgICAgICAgICAgIHBhZGRpbmc6OHB4IDEycHg7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IzAwODNjNDsKICAgICAgICAgICAgY29sb3I6d2hpdGU7CiAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjpub25lOwogICAgICAgICAgICBib3JkZXItcmFkaXVzOjZweDsKICAgICAgICAgICAgZm9udC1zaXplOjEycHg7CiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OjUwMDsKICAgICAgICI+CiAgICAgICBSZXF1ZXN0IFByb3BlcnR5CiAgICA8L2E+CiAgICAKICAgIDwvZGl2PgogICAg" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_ac1606a1d80a2be2af92187baf726a90.setContent(i_frame_036c10ce44e4cdb3508ad88be918afac);
+            
+        
+
+        marker_058623d14214fd9f1ea77c5f568015ad.bindPopup(popup_ac1606a1d80a2be2af92187baf726a90)
+        ;
+
+        
+    
+    
+                marker_058623d14214fd9f1ea77c5f568015ad.setIcon(div_icon_2dda9d896b8781615fd8292c206d3175);
+            
+    
+            var marker_7bc2af4ce0d928390b2084b41c7ae5ce = L.marker(
+                [18.4103332519479, -66.0564108499015],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_167f8f5d9d8dbe7ebcdb5d5eedf5032a = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_02c1cd2616be4362d0c6ad601cc05364 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_728330f251c22b2cfcb60fbc105dbe38 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+VkEgTUVOVEFMIEhFQUxUSCBBTkQgUkVDT1ZFUlkgQ0VOVEVSPC9oMz4KICAgICAgICA8aDQgc3R5bGU9Im1hcmdpbjo0cHggMDsiPgogICAgICAgICAgICA8YSBocmVmPSJodHRwczovL3d3dy5nb29nbGUuY29tL21hcHMvZGlyLz9hcGk9MSZkZXN0aW5hdGlvbj0xOC40MTAzMzMyNTE5NDc5LC02Ni4wNTY0MTA4NDk5MDE1IiB0YXJnZXQ9Il9ibGFuayIgc3R5bGU9InRleHQtZGVjb3JhdGlvbjpub25lOyBjb2xvcjojMmI2Y2IwOyI+CiAgICAgICAgICAgICAgICBTYW4gSnVhbiwgUFIgMDA5MTgKICAgICAgICAgICAgPC9hPgogICAgICAgIDwvaDQ+CiAgICAgICAgCiAgICAgICAgPGRpdiBjbGFzcz0ic2xpZGVzaG93Ij4KICAgICAgICAgICAgPGltZyBzcmM9Imh0dHBzOi8vZ2VuZXNpc3BlcmV6MTkuZ2l0aHViLmlvL2xhcy1icmlzYXMtaW50ZXJhY3RpdmUtbWFwL2ltYWdlcy9WQV9NRU5UQUxfSEVBTFRIX0FORF9SRUNPVkVSWV9DRU5URVIvcHJvcGVydHlfaW1hZ2VzL2ltYWdlXzEuUE5HIiBjbGFzcz0ic2xpZGUiIHN0eWxlPSJ3aWR0aDoxMDAlOyBkaXNwbGF5Om5vbmU7IGJvcmRlci1yYWRpdXM6OHB4OyI+CiAgICAgICAgPC9kaXY+CgogICAgICAgIDxzY3JpcHQ+CiAgICAgICAgdmFyIHNsaWRlcyA9IGRvY3VtZW50LmN1cnJlbnRTY3JpcHQucHJldmlvdXNFbGVtZW50U2libGluZy5xdWVyeVNlbGVjdG9yQWxsKCcuc2xpZGUnKTsKICAgICAgICBsZXQgaW5kZXggPSAwOwogICAgICAgIGZ1bmN0aW9uIHNob3dTbGlkZXMoKSB7CiAgICAgICAgICAgIHNsaWRlcy5mb3JFYWNoKHMgPT4gcy5zdHlsZS5kaXNwbGF5ID0gIm5vbmUiKTsKICAgICAgICAgICAgc2xpZGVzW2luZGV4XS5zdHlsZS5kaXNwbGF5ID0gImJsb2NrIjsKICAgICAgICAgICAgaW5kZXggPSAoaW5kZXggKyAxKSAlIHNsaWRlcy5sZW5ndGg7CiAgICAgICAgICAgIHNldFRpbWVvdXQoc2hvd1NsaWRlcywgMTUwMCk7CiAgICAgICAgfQogICAgICAgIHNob3dTbGlkZXMoKTsKICAgICAgICA8L3NjcmlwdD4KICAgICAgICAKICAgICAgICA8cD5UaGlzIDUyLDAwMCBzcSBmdCBmYWNpbGl0eSBzZXJ2ZXMgdmV0ZXJhbnMgaW4gdGhlIGdlb2dyYXBoaWMgYXJlYSBvZiBQdWVydG8gUmljby4gVGhlIG5ld2x5IGNvbnN0cnVjdGVkIFZldGVyYW4gQWZmYWlyc+KAmSBjbGluaWMgd2lsbCBzZXJ2ZSB+NzAwIHZldGVyYW5zIHBlciB5ZWFyIHRocm91Z2ggYSBSZXNpZGVudGlhbCBUcmVhdG1lbnQgYW5kIFJlY292ZXJ5IFByb2dyYW0uIFJlc2lkZW50aWFsIHRyZWF0bWVudCBQcm9ncmFtIChEb21pY2lsaWFyeSkgLSBDb25zaXN0aW5nIG9mIDQwIHJlc2lkZW50aWFsIGJlZHMsIHRoaXMgcHJvZ3JhbSBpcyBkZXNpZ25lZCB0byBmdW5jdGlvbiBhcyBhIGxvbmctdGVybSByZXNpZGVudGlhbCByZWhhYmlsaXRhdGlvbiBwcm9ncmFtIGZvciB2ZXRlcmFucyB0byBwcm9tb3RlIHRoZSBkZXZlbG9wbWVudCBvZiBuZXcgIHNraWxscyBhbmQgc3VwcG9ydCBuZWVkZWQgdG8gbGl2ZSBpbmRlcGVuZGVudGx5IGluIHRoZSBjb21tdW5pdHkuPC9wPgogICAgICAgIAogICAgPHA+PHN0cm9uZz5DYXRlZ29yeTo8L3N0cm9uZz4gTUlYRUQgUkVUQUlMIFNIT1BQSU5HIENFTlRFUlMgJiBPRkZJQ0U8L3A+CiAgICA8cD48c3Ryb25nPlNxIEZ0Ojwvc3Ryb25nPiA1MiwwMDAuMDwvcD4KICAgIDxwPjxzdHJvbmc+QXZhaWxhYmxlOjwvc3Ryb25nPiBuYW48L3A+CiAgICA8cD48c3Ryb25nPlR5cGU6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+Q29zdDo8L3N0cm9uZz4gJG5hbjwvcD4KICAgIAogICAgICAgIAogICAgPGEgaHJlZj0ibWFpbHRvOnNhbGVzQGxhc2JyaXNhc3Byb3BlcnR5LmNvbT9zdWJqZWN0PUlucXVpcnklMjBhYm91dCUyMFZBJTIwTUVOVEFMJTIwSEVBTFRIJTIwQU5EJTIwUkVDT1ZFUlklMjBDRU5URVImYm9keT1IZWxsbyUyQyUyMEklMjBhbSUyMGludGVyZXN0ZWQlMjBpbiUyMFZBJTIwTUVOVEFMJTIwSEVBTFRIJTIwQU5EJTIwUkVDT1ZFUlklMjBDRU5URVIlMjBsb2NhdGVkJTIwYXQlMjBTYW4lMjBKdWFuJTJDJTIwUFIlMjAwMDkxOC4iIHRhcmdldD0iX2JsYW5rIgogICAgICAgc3R5bGU9IgogICAgICAgICAgICBkaXNwbGF5OmlubGluZS1ibG9jazsKICAgICAgICAgICAgbWFyZ2luLXRvcDoxMHB4OwogICAgICAgICAgICBwYWRkaW5nOjhweCAxMnB4OwogICAgICAgICAgICBiYWNrZ3JvdW5kOiMwMDgzYzQ7CiAgICAgICAgICAgIGNvbG9yOndoaXRlOwogICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246bm9uZTsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czo2cHg7CiAgICAgICAgICAgIGZvbnQtc2l6ZToxMnB4OwogICAgICAgICAgICBmb250LXdlaWdodDo1MDA7CiAgICAgICAiPgogICAgICAgUmVxdWVzdCBQcm9wZXJ0eQogICAgPC9hPgogICAgCiAgICA8L2Rpdj4KICAgIA==" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_02c1cd2616be4362d0c6ad601cc05364.setContent(i_frame_728330f251c22b2cfcb60fbc105dbe38);
+            
+        
+
+        marker_7bc2af4ce0d928390b2084b41c7ae5ce.bindPopup(popup_02c1cd2616be4362d0c6ad601cc05364)
+        ;
+
+        
+    
+    
+                marker_7bc2af4ce0d928390b2084b41c7ae5ce.setIcon(div_icon_167f8f5d9d8dbe7ebcdb5d5eedf5032a);
+            
+    
+            var marker_5366f29015014d29abaa5057398ecc75 = L.marker(
+                [18.375778708328, -65.8317169288352],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_f166ecb52473a90e2680c058d7677a53 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_3b59832f98050c1dbb126f167456655a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_10ddaf9aebe96146669f9ee0c1999dd8 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+UklPIEdSQU5ERSBUT1dOIENFTlRFUjwvaDM+CiAgICAgICAgPGg0IHN0eWxlPSJtYXJnaW46NHB4IDA7Ij4KICAgICAgICAgICAgPGEgaHJlZj0iaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9tYXBzL2Rpci8/YXBpPTEmZGVzdGluYXRpb249MTguMzc1Nzc4NzA4MzI4LC02NS44MzE3MTY5Mjg4MzUyIiB0YXJnZXQ9Il9ibGFuayIgc3R5bGU9InRleHQtZGVjb3JhdGlvbjpub25lOyBjb2xvcjojMmI2Y2IwOyI+CiAgICAgICAgICAgICAgICBSaW8gR3JhbmRlLCBQUiAwMDc0NQogICAgICAgICAgICA8L2E+CiAgICAgICAgPC9oND4KICAgICAgICAKICAgICAgICA8ZGl2IGNsYXNzPSJzbGlkZXNob3ciPgogICAgICAgICAgICA8aW1nIHNyYz0iaHR0cHM6Ly9nZW5lc2lzcGVyZXoxOS5naXRodWIuaW8vbGFzLWJyaXNhcy1pbnRlcmFjdGl2ZS1tYXAvaW1hZ2VzL1JJT19HUkFOREVfVE9XTl9DRU5URVIvcHJvcGVydHlfaW1hZ2VzL2ltYWdlXzEuUE5HIiBjbGFzcz0ic2xpZGUiIHN0eWxlPSJ3aWR0aDoxMDAlOyBkaXNwbGF5Om5vbmU7IGJvcmRlci1yYWRpdXM6OHB4OyI+CiAgICAgICAgPC9kaXY+CgogICAgICAgIDxzY3JpcHQ+CiAgICAgICAgdmFyIHNsaWRlcyA9IGRvY3VtZW50LmN1cnJlbnRTY3JpcHQucHJldmlvdXNFbGVtZW50U2libGluZy5xdWVyeVNlbGVjdG9yQWxsKCcuc2xpZGUnKTsKICAgICAgICBsZXQgaW5kZXggPSAwOwogICAgICAgIGZ1bmN0aW9uIHNob3dTbGlkZXMoKSB7CiAgICAgICAgICAgIHNsaWRlcy5mb3JFYWNoKHMgPT4gcy5zdHlsZS5kaXNwbGF5ID0gIm5vbmUiKTsKICAgICAgICAgICAgc2xpZGVzW2luZGV4XS5zdHlsZS5kaXNwbGF5ID0gImJsb2NrIjsKICAgICAgICAgICAgaW5kZXggPSAoaW5kZXggKyAxKSAlIHNsaWRlcy5sZW5ndGg7CiAgICAgICAgICAgIHNldFRpbWVvdXQoc2hvd1NsaWRlcywgMTUwMCk7CiAgICAgICAgfQogICAgICAgIHNob3dTbGlkZXMoKTsKICAgICAgICA8L3NjcmlwdD4KICAgICAgICAKICAgICAgICA8cD5TcGFjaW91cyBhbmQgYWNjZXNzaWJsZSwgUmlvIEdyYW5kZSBUb3duIENlbnRlciBoYXMgdGhlIHBlcmZlY3Qgc3BvcnQgZm9yIGFueSBidXNpbmVzcyB2ZW50dXJlLiBDb252ZW5pZW50bHkgbG9jYXRlZCBvbiB0aGUgUm91dGUgNjYgRXhpdCBjbG9zZSB0byBtYWluIHRvdXJpc3QgYXR0cmFjdGlvbnMgYW5kIGhvdGVscy4KCldpdGggZXhwZXJ0IGZhY2lsaXRpZXMgYW5kIG1hbmFnZW1lbnQgdGVhbXMgZGVkaWNhdGVkIHRvIHByb3ZpZGluZyB0aGUgYmVzdCBzZXJ2aWNlcyB0byBib3RoIGNsaWVudHMgYW5kIHRlbmFudHMsIGNhbGwgTEJQTSB0byBzdGFydCBidWlsZGluZyB5b3VyIHN1Y2Nlc3NmdWwgYnVzaW5lc3MgbG9jYXRpb24gdG9kYXkuPC9wPgogICAgICAgIAogICAgPHA+PHN0cm9uZz5DYXRlZ29yeTo8L3N0cm9uZz4gTUlYRUQgUkVUQUlMIFNIT1BQSU5HIENFTlRFUlMgJiBPRkZJQ0U8L3A+CiAgICA8cD48c3Ryb25nPlNxIEZ0Ojwvc3Ryb25nPiBuYW48L3A+CiAgICA8cD48c3Ryb25nPkF2YWlsYWJsZTo8L3N0cm9uZz4gbmFuPC9wPgogICAgPHA+PHN0cm9uZz5UeXBlOjwvc3Ryb25nPiBuYW48L3A+CiAgICA8cD48c3Ryb25nPkNvc3Q6PC9zdHJvbmc+ICRuYW48L3A+CiAgICAKICAgICAgICAKICAgIDxhIGhyZWY9Im1haWx0bzpzYWxlc0BsYXNicmlzYXNwcm9wZXJ0eS5jb20/c3ViamVjdD1JbnF1aXJ5JTIwYWJvdXQlMjBSSU8lMjBHUkFOREUlMjBUT1dOJTIwQ0VOVEVSJmJvZHk9SGVsbG8lMkMlMjBJJTIwYW0lMjBpbnRlcmVzdGVkJTIwaW4lMjBSSU8lMjBHUkFOREUlMjBUT1dOJTIwQ0VOVEVSJTIwbG9jYXRlZCUyMGF0JTIwUmlvJTIwR3JhbmRlJTJDJTIwUFIlMjAwMDc0NS4iIHRhcmdldD0iX2JsYW5rIgogICAgICAgc3R5bGU9IgogICAgICAgICAgICBkaXNwbGF5OmlubGluZS1ibG9jazsKICAgICAgICAgICAgbWFyZ2luLXRvcDoxMHB4OwogICAgICAgICAgICBwYWRkaW5nOjhweCAxMnB4OwogICAgICAgICAgICBiYWNrZ3JvdW5kOiMwMDgzYzQ7CiAgICAgICAgICAgIGNvbG9yOndoaXRlOwogICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246bm9uZTsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czo2cHg7CiAgICAgICAgICAgIGZvbnQtc2l6ZToxMnB4OwogICAgICAgICAgICBmb250LXdlaWdodDo1MDA7CiAgICAgICAiPgogICAgICAgUmVxdWVzdCBQcm9wZXJ0eQogICAgPC9hPgogICAgCiAgICA8L2Rpdj4KICAgIA==" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_3b59832f98050c1dbb126f167456655a.setContent(i_frame_10ddaf9aebe96146669f9ee0c1999dd8);
+            
+        
+
+        marker_5366f29015014d29abaa5057398ecc75.bindPopup(popup_3b59832f98050c1dbb126f167456655a)
+        ;
+
+        
+    
+    
+                marker_5366f29015014d29abaa5057398ecc75.setIcon(div_icon_f166ecb52473a90e2680c058d7677a53);
+            
+    
+            var marker_d6554498cb8558b71d9062a37133af4d = L.marker(
+                [18.4159368614601, -66.1045366711647],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_71fef4dda787399dac207a22464a2702 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_d366734092771296563b848e8530117d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_cd1b27cf7b0ba454fef13d808b11fefb = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+TUVUUk8gT0ZGSUNFIFBBUksgLSBTT05TWVJBPC9oMz4KICAgICAgICA8aDQgc3R5bGU9Im1hcmdpbjo0cHggMDsiPgogICAgICAgICAgICA8YSBocmVmPSJodHRwczovL3d3dy5nb29nbGUuY29tL21hcHMvZGlyLz9hcGk9MSZkZXN0aW5hdGlvbj0xOC40MTU5MzY4NjE0NjAxLC02Ni4xMDQ1MzY2NzExNjQ3IiB0YXJnZXQ9Il9ibGFuayIgc3R5bGU9InRleHQtZGVjb3JhdGlvbjpub25lOyBjb2xvcjojMmI2Y2IwOyI+CiAgICAgICAgICAgICAgICBHdWF5bmFibywgUFIgMDA5NjYKICAgICAgICAgICAgPC9hPgogICAgICAgIDwvaDQ+CiAgICAgICAgCiAgICAgICAgPGRpdiBjbGFzcz0ic2xpZGVzaG93Ij4KICAgICAgICAgICAgPGltZyBzcmM9Imh0dHBzOi8vZ2VuZXNpc3BlcmV6MTkuZ2l0aHViLmlvL2xhcy1icmlzYXMtaW50ZXJhY3RpdmUtbWFwL2ltYWdlcy9NRVRST19PRkZJQ0VfUEFSSy9wcm9wZXJ0eV9pbWFnZXMvaW1hZ2VfMS5QTkciIGNsYXNzPSJzbGlkZSIgc3R5bGU9IndpZHRoOjEwMCU7IGRpc3BsYXk6bm9uZTsgYm9yZGVyLXJhZGl1czo4cHg7Ij4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPHNjcmlwdD4KICAgICAgICB2YXIgc2xpZGVzID0gZG9jdW1lbnQuY3VycmVudFNjcmlwdC5wcmV2aW91c0VsZW1lbnRTaWJsaW5nLnF1ZXJ5U2VsZWN0b3JBbGwoJy5zbGlkZScpOwogICAgICAgIGxldCBpbmRleCA9IDA7CiAgICAgICAgZnVuY3Rpb24gc2hvd1NsaWRlcygpIHsKICAgICAgICAgICAgc2xpZGVzLmZvckVhY2gocyA9PiBzLnN0eWxlLmRpc3BsYXkgPSAibm9uZSIpOwogICAgICAgICAgICBzbGlkZXNbaW5kZXhdLnN0eWxlLmRpc3BsYXkgPSAiYmxvY2siOwogICAgICAgICAgICBpbmRleCA9IChpbmRleCArIDEpICUgc2xpZGVzLmxlbmd0aDsKICAgICAgICAgICAgc2V0VGltZW91dChzaG93U2xpZGVzLCAxNTAwKTsKICAgICAgICB9CiAgICAgICAgc2hvd1NsaWRlcygpOwogICAgICAgIDwvc2NyaXB0PgogICAgICAgIAogICAgICAgIDxwPlN1cnJvdW5kIHlvdXJzZWxmIHdpdGggTWV0cm8gT2ZmaWNlIFBhcmvigJlzIGljb25pYyBhcmNoaXRlY3R1cmUgYW5kIHRoZSBsYXRlc3QgaW4gaGlnaC10ZWNoIGVjb2xvZ2ljYWwgc3BhY2VzLgoKRXhjZWxsZW50IHZpZXdzLCBhbWVuaXRpZXMsIGFuZCBzZWN1cml0eS4gQW1hemluZyBsb2NhdGlvbiBqdXN0IHR3byBtaW51dGVzIGZyb20gU2FuIFBhdHJpY2lvIFBsYXphIGFuZCBtYWpvciBoaWdod2F5cy48L3A+CiAgICAgICAgCiAgICA8cD48c3Ryb25nPkNhdGVnb3J5Ojwvc3Ryb25nPiBPRkZJQ0UgQlVJTERJTkdTPC9wPgogICAgPHA+PHN0cm9uZz5TcSBGdDo8L3N0cm9uZz4gbmFuPC9wPgogICAgPHA+PHN0cm9uZz5BdmFpbGFibGU6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+VHlwZTo8L3N0cm9uZz4gbmFuPC9wPgogICAgPHA+PHN0cm9uZz5Db3N0Ojwvc3Ryb25nPiAkbmFuPC9wPgogICAgCiAgICAgICAgCiAgICA8YSBocmVmPSJtYWlsdG86c2FsZXNAbGFzYnJpc2FzcHJvcGVydHkuY29tP3N1YmplY3Q9SW5xdWlyeSUyMGFib3V0JTIwTUVUUk8lMjBPRkZJQ0UlMjBQQVJLJTIwLSUyMFNPTlNZUkEmYm9keT1IZWxsbyUyQyUyMEklMjBhbSUyMGludGVyZXN0ZWQlMjBpbiUyME1FVFJPJTIwT0ZGSUNFJTIwUEFSSyUyMC0lMjBTT05TWVJBJTIwbG9jYXRlZCUyMGF0JTIwR3VheW5hYm8lMkMlMjBQUiUyMDAwOTY2LiIgdGFyZ2V0PSJfYmxhbmsiCiAgICAgICBzdHlsZT0iCiAgICAgICAgICAgIGRpc3BsYXk6aW5saW5lLWJsb2NrOwogICAgICAgICAgICBtYXJnaW4tdG9wOjEwcHg7CiAgICAgICAgICAgIHBhZGRpbmc6OHB4IDEycHg7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IzAwODNjNDsKICAgICAgICAgICAgY29sb3I6d2hpdGU7CiAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjpub25lOwogICAgICAgICAgICBib3JkZXItcmFkaXVzOjZweDsKICAgICAgICAgICAgZm9udC1zaXplOjEycHg7CiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OjUwMDsKICAgICAgICI+CiAgICAgICBSZXF1ZXN0IFByb3BlcnR5CiAgICA8L2E+CiAgICAKICAgIDwvZGl2PgogICAg" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_d366734092771296563b848e8530117d.setContent(i_frame_cd1b27cf7b0ba454fef13d808b11fefb);
+            
+        
+
+        marker_d6554498cb8558b71d9062a37133af4d.bindPopup(popup_d366734092771296563b848e8530117d)
+        ;
+
+        
+    
+    
+                marker_d6554498cb8558b71d9062a37133af4d.setIcon(div_icon_71fef4dda787399dac207a22464a2702);
+            
+    
+            var marker_bafa4f691a4539e36d4222a154b1c209 = L.marker(
+                [18.4257760799021, -66.0591364865057],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_dc10676e759cede976f68ba4d1d7511c = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_e491165c3824e3df483d2d5ddbd19a5e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_4c316979e54a4cb9a12773892e693d31 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+T1JJRU5UQUwgQkFOSyBIRUFEUVVBUlRFUlM8L2gzPgogICAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjRweCAwOyI+CiAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vbWFwcy9kaXIvP2FwaT0xJmRlc3RpbmF0aW9uPTE4LjQyNTc3NjA3OTkwMjEsLTY2LjA1OTEzNjQ4NjUwNTciIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0idGV4dC1kZWNvcmF0aW9uOm5vbmU7IGNvbG9yOiMyYjZjYjA7Ij4KICAgICAgICAgICAgICAgIFNhbiBKdWFuLCBQUiAwMDkxOAogICAgICAgICAgICA8L2E+CiAgICAgICAgPC9oND4KICAgICAgICAKICAgICAgICA8ZGl2IGNsYXNzPSJzbGlkZXNob3ciPgogICAgICAgICAgICA8aW1nIHNyYz0iaHR0cHM6Ly9nZW5lc2lzcGVyZXoxOS5naXRodWIuaW8vbGFzLWJyaXNhcy1pbnRlcmFjdGl2ZS1tYXAvaW1hZ2VzL09SSUVOVEFMX0JBTktfSEVBRFFVQVJURVJTL3Byb3BlcnR5X2ltYWdlcy9pbWFnZV8xLlBORyIgY2xhc3M9InNsaWRlIiBzdHlsZT0id2lkdGg6MTAwJTsgZGlzcGxheTpub25lOyBib3JkZXItcmFkaXVzOjhweDsiPgogICAgICAgIDwvZGl2PgoKICAgICAgICA8c2NyaXB0PgogICAgICAgIHZhciBzbGlkZXMgPSBkb2N1bWVudC5jdXJyZW50U2NyaXB0LnByZXZpb3VzRWxlbWVudFNpYmxpbmcucXVlcnlTZWxlY3RvckFsbCgnLnNsaWRlJyk7CiAgICAgICAgbGV0IGluZGV4ID0gMDsKICAgICAgICBmdW5jdGlvbiBzaG93U2xpZGVzKCkgewogICAgICAgICAgICBzbGlkZXMuZm9yRWFjaChzID0+IHMuc3R5bGUuZGlzcGxheSA9ICJub25lIik7CiAgICAgICAgICAgIHNsaWRlc1tpbmRleF0uc3R5bGUuZGlzcGxheSA9ICJibG9jayI7CiAgICAgICAgICAgIGluZGV4ID0gKGluZGV4ICsgMSkgJSBzbGlkZXMubGVuZ3RoOwogICAgICAgICAgICBzZXRUaW1lb3V0KHNob3dTbGlkZXMsIDE1MDApOwogICAgICAgIH0KICAgICAgICBzaG93U2xpZGVzKCk7CiAgICAgICAgPC9zY3JpcHQ+CiAgICAgICAgCiAgICAgICAgPHA+SGVhZHF1YXJ0ZXJzIGZvciBPcmllbnRhbCBCYW5rLCB0aGlzIGZpZnRlZW4tc3RvcnkgYnVpbGRpbmcgaW5jbHVkZXMgT3JpZW50YWwgQmFuaydzIG9wZXJhdGlvbnMgYW5kICIgVGhlIENvZmZlZSBTaG9wIiBsb2NhdGVkIGluIHRoZSBsb2JieSBhcmVhLiAKClRoZSBIZWFkcXVhcnRlcnMgY29uc2lzdCBvZiAyMzAsMDAwIHNxIGZ0IG9uIDE1IGZsb29ycyBhbmQgaW5jbHVkZXMgYW4gdW5kZXJncm91bmQgMi1zdG9yeSBwYXJraW5nIGZhY2lsaXR5IGFuZCB0d28gYWRqYWNlbnQgcGFya2luZyBmYWNpbGl0aWVzLiBUaGlzIEJ1aWxkaW5nIGlzIGN1cnJlbnRseSAxMDAlIG9jY3VwaWVkLjwvcD4KICAgICAgICAKICAgIDxwPjxzdHJvbmc+Q2F0ZWdvcnk6PC9zdHJvbmc+IE9GRklDRSBCVUlMRElOR1M8L3A+CiAgICA8cD48c3Ryb25nPlNxIEZ0Ojwvc3Ryb25nPiAyMzAsMDAwLjA8L3A+CiAgICA8cD48c3Ryb25nPkF2YWlsYWJsZTo8L3N0cm9uZz4gbmFuPC9wPgogICAgPHA+PHN0cm9uZz5UeXBlOjwvc3Ryb25nPiBuYW48L3A+CiAgICA8cD48c3Ryb25nPkNvc3Q6PC9zdHJvbmc+ICRuYW48L3A+CiAgICAKICAgICAgICAKICAgIDxhIGhyZWY9Im1haWx0bzpzYWxlc0BsYXNicmlzYXNwcm9wZXJ0eS5jb20/c3ViamVjdD1JbnF1aXJ5JTIwYWJvdXQlMjBPUklFTlRBTCUyMEJBTkslMjBIRUFEUVVBUlRFUlMmYm9keT1IZWxsbyUyQyUyMEklMjBhbSUyMGludGVyZXN0ZWQlMjBpbiUyME9SSUVOVEFMJTIwQkFOSyUyMEhFQURRVUFSVEVSUyUyMGxvY2F0ZWQlMjBhdCUyMFNhbiUyMEp1YW4lMkMlMjBQUiUyMDAwOTE4LiIgdGFyZ2V0PSJfYmxhbmsiCiAgICAgICBzdHlsZT0iCiAgICAgICAgICAgIGRpc3BsYXk6aW5saW5lLWJsb2NrOwogICAgICAgICAgICBtYXJnaW4tdG9wOjEwcHg7CiAgICAgICAgICAgIHBhZGRpbmc6OHB4IDEycHg7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IzAwODNjNDsKICAgICAgICAgICAgY29sb3I6d2hpdGU7CiAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjpub25lOwogICAgICAgICAgICBib3JkZXItcmFkaXVzOjZweDsKICAgICAgICAgICAgZm9udC1zaXplOjEycHg7CiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OjUwMDsKICAgICAgICI+CiAgICAgICBSZXF1ZXN0IFByb3BlcnR5CiAgICA8L2E+CiAgICAKICAgIDwvZGl2PgogICAg" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_e491165c3824e3df483d2d5ddbd19a5e.setContent(i_frame_4c316979e54a4cb9a12773892e693d31);
+            
+        
+
+        marker_bafa4f691a4539e36d4222a154b1c209.bindPopup(popup_e491165c3824e3df483d2d5ddbd19a5e)
+        ;
+
+        
+    
+    
+                marker_bafa4f691a4539e36d4222a154b1c209.setIcon(div_icon_dc10676e759cede976f68ba4d1d7511c);
+            
+    
+            var marker_17d408e2ab0fbe44a2cc8abb1f4513f1 = L.marker(
+                [18.4105130335677, -66.05708402024],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_267105b88ee126cf8a7ca7333ac584d2 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_017a55d0320498f9bfff7de794273cc1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_ad2e49c7f94c34174df4d9285e3e7bc6 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+TU9OVEUgUExBWkEgLyA2NTQgUExBWkE8L2gzPgogICAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjRweCAwOyI+CiAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vbWFwcy9kaXIvP2FwaT0xJmRlc3RpbmF0aW9uPTE4LjQxMDUxMzAzMzU2NzcsLTY2LjA1NzA4NDAyMDI0IiB0YXJnZXQ9Il9ibGFuayIgc3R5bGU9InRleHQtZGVjb3JhdGlvbjpub25lOyBjb2xvcjojMmI2Y2IwOyI+CiAgICAgICAgICAgICAgICBIYXRvIFJleSwgUFIgMDA5MTgKICAgICAgICAgICAgPC9hPgogICAgICAgIDwvaDQ+CiAgICAgICAgCiAgICAgICAgPGRpdiBjbGFzcz0ic2xpZGVzaG93Ij4KICAgICAgICAgICAgPGltZyBzcmM9Imh0dHBzOi8vZ2VuZXNpc3BlcmV6MTkuZ2l0aHViLmlvL2xhcy1icmlzYXMtaW50ZXJhY3RpdmUtbWFwL2ltYWdlcy9NT05URV9QTEFaQS9wcm9wZXJ0eV9pbWFnZXMvaW1hZ2VfMS5QTkciIGNsYXNzPSJzbGlkZSIgc3R5bGU9IndpZHRoOjEwMCU7IGRpc3BsYXk6bm9uZTsgYm9yZGVyLXJhZGl1czo4cHg7Ij4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPHNjcmlwdD4KICAgICAgICB2YXIgc2xpZGVzID0gZG9jdW1lbnQuY3VycmVudFNjcmlwdC5wcmV2aW91c0VsZW1lbnRTaWJsaW5nLnF1ZXJ5U2VsZWN0b3JBbGwoJy5zbGlkZScpOwogICAgICAgIGxldCBpbmRleCA9IDA7CiAgICAgICAgZnVuY3Rpb24gc2hvd1NsaWRlcygpIHsKICAgICAgICAgICAgc2xpZGVzLmZvckVhY2gocyA9PiBzLnN0eWxlLmRpc3BsYXkgPSAibm9uZSIpOwogICAgICAgICAgICBzbGlkZXNbaW5kZXhdLnN0eWxlLmRpc3BsYXkgPSAiYmxvY2siOwogICAgICAgICAgICBpbmRleCA9IChpbmRleCArIDEpICUgc2xpZGVzLmxlbmd0aDsKICAgICAgICAgICAgc2V0VGltZW91dChzaG93U2xpZGVzLCAxNTAwKTsKICAgICAgICB9CiAgICAgICAgc2hvd1NsaWRlcygpOwogICAgICAgIDwvc2NyaXB0PgogICAgICAgIAogICAgICAgIDxwPk1vbnRlIFRvd2VyIGlzIGxvY2F0ZWQgYXQgdGhlIGNlbnRlciBvZiBIYXRvIFJleSwgc3RlcHMgYXdheSBmcm9tIFNhbiBKdWFuIEp1ZGljaWFsIENlbnRlciwgdXJiYW4gdHJhaW4gc3RhdGlvbnMsIGFuZCBjbG9zZSB0byB0aGUgaWRlYWwgem9uZSBmb3IgbWVkaWNhbCBvZmZpY2VzIGFuZCBsYXcgZmlybXMuIFRoZSBQbGF6YSBpcyBsb2NhdGVkIG9uIHRoZSBwcmluY2lwYWwgYXZlbnVlIHRvIEhhdG8gUmV5IGFuZCBjbG9zZSB0byBQaW5lcm8gQXZlbnVlLCB3aGljaCBsZWFkcyBkaXJlY3RseSB0byBMYXMgQW1lcmljYXMgRXhwcmVzc3dheSB3aXRoIGVhc3kgYWNjZXNzIHRvIEx1aXMgTXVub3ogTWFyaW4gQWlycG9ydC4gVGhlIFBsYXphIGJ1aWxkaW5nIGhhcyAyNzcsMDAwIHNxdWFyZSBmZWV0IG9mIENsYXNzIEEgb2ZmaWNlIHNwYWNlIGFuZCBmaXJzdC1jbGFzcyBhbWVuaXRpZXMsIG1ha2luZyB0aGUgUGxhemEgYSBwb3dlcmZ1bCBhbmQgcHJlc3RpZ2lvdXMgbG9jYXRpb24gZm9yIHNtYWxsIGFuZCBsYXJnZSBjb3Jwb3JhdGUgb2ZmaWNlcy48L3A+CiAgICAgICAgCiAgICA8cD48c3Ryb25nPkNhdGVnb3J5Ojwvc3Ryb25nPiBPRkZJQ0UgQlVJTERJTkdTPC9wPgogICAgPHA+PHN0cm9uZz5TcSBGdDo8L3N0cm9uZz4gMjc3LDAwMC4wPC9wPgogICAgPHA+PHN0cm9uZz5BdmFpbGFibGU6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+VHlwZTo8L3N0cm9uZz4gbmFuPC9wPgogICAgPHA+PHN0cm9uZz5Db3N0Ojwvc3Ryb25nPiAkbmFuPC9wPgogICAgCiAgICAgICAgCiAgICA8YSBocmVmPSJtYWlsdG86c2FsZXNAbGFzYnJpc2FzcHJvcGVydHkuY29tP3N1YmplY3Q9SW5xdWlyeSUyMGFib3V0JTIwTU9OVEUlMjBQTEFaQSUyMC8lMjA2NTQlMjBQTEFaQSZib2R5PUhlbGxvJTJDJTIwSSUyMGFtJTIwaW50ZXJlc3RlZCUyMGluJTIwTU9OVEUlMjBQTEFaQSUyMC8lMjA2NTQlMjBQTEFaQSUyMGxvY2F0ZWQlMjBhdCUyMEhhdG8lMjBSZXklMkMlMjBQUiUyMDAwOTE4LiIgdGFyZ2V0PSJfYmxhbmsiCiAgICAgICBzdHlsZT0iCiAgICAgICAgICAgIGRpc3BsYXk6aW5saW5lLWJsb2NrOwogICAgICAgICAgICBtYXJnaW4tdG9wOjEwcHg7CiAgICAgICAgICAgIHBhZGRpbmc6OHB4IDEycHg7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IzAwODNjNDsKICAgICAgICAgICAgY29sb3I6d2hpdGU7CiAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjpub25lOwogICAgICAgICAgICBib3JkZXItcmFkaXVzOjZweDsKICAgICAgICAgICAgZm9udC1zaXplOjEycHg7CiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OjUwMDsKICAgICAgICI+CiAgICAgICBSZXF1ZXN0IFByb3BlcnR5CiAgICA8L2E+CiAgICAKICAgIDwvZGl2PgogICAg" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_017a55d0320498f9bfff7de794273cc1.setContent(i_frame_ad2e49c7f94c34174df4d9285e3e7bc6);
+            
+        
+
+        marker_17d408e2ab0fbe44a2cc8abb1f4513f1.bindPopup(popup_017a55d0320498f9bfff7de794273cc1)
+        ;
+
+        
+    
+    
+                marker_17d408e2ab0fbe44a2cc8abb1f4513f1.setIcon(div_icon_267105b88ee126cf8a7ca7333ac584d2);
+            
+    
+            var marker_0c32197d73a2227bb8db6a95ed046267 = L.marker(
+                [18.4102238137057, -66.0572968018467],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_b05dc6bf91783b579af777ed7be04ff0 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_b8f3a11cf8f6bf7b5f287324d513896e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_14505763c6bc5e417569d3e00012bc77 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+RUwgTU9OVEUgVE9XRVI8L2gzPgogICAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjRweCAwOyI+CiAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vbWFwcy9kaXIvP2FwaT0xJmRlc3RpbmF0aW9uPTE4LjQxMDIyMzgxMzcwNTcsLTY2LjA1NzI5NjgwMTg0NjciIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0idGV4dC1kZWNvcmF0aW9uOm5vbmU7IGNvbG9yOiMyYjZjYjA7Ij4KICAgICAgICAgICAgICAgIEhhdG8gUmV5LCBQUiAwMDkxOAogICAgICAgICAgICA8L2E+CiAgICAgICAgPC9oND4KICAgICAgICAKICAgICAgICA8ZGl2IGNsYXNzPSJzbGlkZXNob3ciPgogICAgICAgICAgICA8aW1nIHNyYz0iaHR0cHM6Ly9nZW5lc2lzcGVyZXoxOS5naXRodWIuaW8vbGFzLWJyaXNhcy1pbnRlcmFjdGl2ZS1tYXAvaW1hZ2VzL0VMX01PTlRFX1RPV0VSL3Byb3BlcnR5X2ltYWdlcy9pbWFnZV8xLlBORyIgY2xhc3M9InNsaWRlIiBzdHlsZT0id2lkdGg6MTAwJTsgZGlzcGxheTpub25lOyBib3JkZXItcmFkaXVzOjhweDsiPgogICAgICAgIDwvZGl2PgoKICAgICAgICA8c2NyaXB0PgogICAgICAgIHZhciBzbGlkZXMgPSBkb2N1bWVudC5jdXJyZW50U2NyaXB0LnByZXZpb3VzRWxlbWVudFNpYmxpbmcucXVlcnlTZWxlY3RvckFsbCgnLnNsaWRlJyk7CiAgICAgICAgbGV0IGluZGV4ID0gMDsKICAgICAgICBmdW5jdGlvbiBzaG93U2xpZGVzKCkgewogICAgICAgICAgICBzbGlkZXMuZm9yRWFjaChzID0+IHMuc3R5bGUuZGlzcGxheSA9ICJub25lIik7CiAgICAgICAgICAgIHNsaWRlc1tpbmRleF0uc3R5bGUuZGlzcGxheSA9ICJibG9jayI7CiAgICAgICAgICAgIGluZGV4ID0gKGluZGV4ICsgMSkgJSBzbGlkZXMubGVuZ3RoOwogICAgICAgICAgICBzZXRUaW1lb3V0KHNob3dTbGlkZXMsIDE1MDApOwogICAgICAgIH0KICAgICAgICBzaG93U2xpZGVzKCk7CiAgICAgICAgPC9zY3JpcHQ+CiAgICAgICAgCiAgICAgICAgPHA+TW9udGUgVG93ZXIgaXMgbG9jYXRlZCBhdCB0aGUgY2VudGVyIG9mIEhhdG8gUmV5LCBzdGVwcyBhd2F5IGZyb20gU2FuIEp1YW4gSnVkaWNpYWwgQ2VudGVyLCB1cmJhbiB0cmFpbiBzdGF0aW9ucywgYW5kIGNsb3NlIHRvIHRoZSBpZGVhbCB6b25lIGZvciBtZWRpY2FsIG9mZmljZXMgYW5kIGxhdyBmaXJtcy4KClRoZSBUb3dlciBpcyBsb2NhdGVkIG9uIHRoZSBwcmluY2lwYWwgYXZlbnVlIHRvIEhhdG8gUmV5IGFuZCBjbG9zZSB0byBQaW5lcm8gQXZlbnVlLCB3aGljaCBsZWFkcyBkaXJlY3RseSB0byBMYXMgQW1lcmljYXMgRXhwcmVzc3dheSB3aXRoIGVhc3kgYWNjZXNzIHRvIEx1aXMgTXVub3ogTWFyaW4gQWlycG9ydC4gVGhlIFRvd2VyIG9mZmVycyBhIG1vZGVybiBidWlsZGluZyBuZWFyIGV4cXVpc2l0ZSByZXN0YXVyYW50cyBhbmQgY2xvc2UgdG8gUGxhemEgTGFzIEFtZXJpY2FzLjwvcD4KICAgICAgICAKICAgIDxwPjxzdHJvbmc+Q2F0ZWdvcnk6PC9zdHJvbmc+IE9GRklDRSBCVUlMRElOR1M8L3A+CiAgICA8cD48c3Ryb25nPlNxIEZ0Ojwvc3Ryb25nPiBuYW48L3A+CiAgICA8cD48c3Ryb25nPkF2YWlsYWJsZTo8L3N0cm9uZz4gbmFuPC9wPgogICAgPHA+PHN0cm9uZz5UeXBlOjwvc3Ryb25nPiBuYW48L3A+CiAgICA8cD48c3Ryb25nPkNvc3Q6PC9zdHJvbmc+ICRuYW48L3A+CiAgICAKICAgICAgICAKICAgIDxhIGhyZWY9Im1haWx0bzpzYWxlc0BsYXNicmlzYXNwcm9wZXJ0eS5jb20/c3ViamVjdD1JbnF1aXJ5JTIwYWJvdXQlMjBFTCUyME1PTlRFJTIwVE9XRVImYm9keT1IZWxsbyUyQyUyMEklMjBhbSUyMGludGVyZXN0ZWQlMjBpbiUyMEVMJTIwTU9OVEUlMjBUT1dFUiUyMGxvY2F0ZWQlMjBhdCUyMEhhdG8lMjBSZXklMkMlMjBQUiUyMDAwOTE4LiIgdGFyZ2V0PSJfYmxhbmsiCiAgICAgICBzdHlsZT0iCiAgICAgICAgICAgIGRpc3BsYXk6aW5saW5lLWJsb2NrOwogICAgICAgICAgICBtYXJnaW4tdG9wOjEwcHg7CiAgICAgICAgICAgIHBhZGRpbmc6OHB4IDEycHg7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IzAwODNjNDsKICAgICAgICAgICAgY29sb3I6d2hpdGU7CiAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjpub25lOwogICAgICAgICAgICBib3JkZXItcmFkaXVzOjZweDsKICAgICAgICAgICAgZm9udC1zaXplOjEycHg7CiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OjUwMDsKICAgICAgICI+CiAgICAgICBSZXF1ZXN0IFByb3BlcnR5CiAgICA8L2E+CiAgICAKICAgIDwvZGl2PgogICAg" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_b8f3a11cf8f6bf7b5f287324d513896e.setContent(i_frame_14505763c6bc5e417569d3e00012bc77);
+            
+        
+
+        marker_0c32197d73a2227bb8db6a95ed046267.bindPopup(popup_b8f3a11cf8f6bf7b5f287324d513896e)
+        ;
+
+        
+    
+    
+                marker_0c32197d73a2227bb8db6a95ed046267.setIcon(div_icon_b05dc6bf91783b579af777ed7be04ff0);
+            
+    
+            var marker_bf16f0157effed847aee5ad5d99f88da = L.marker(
+                [18.4451765533522, -66.0164083288352],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_8dc0b6855eb72d1ef952df8adfb7cc61 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_84c4b3d042963fcd859d814ef688313f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_8cc9e837225f77c89f2dff217cc0758a = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+Q0FTQSBDT1NURVJBIC0gQXBhcnRtZW50cyBCeSBNYXJyaW90dCBCb252b3k8L2gzPgogICAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjRweCAwOyI+CiAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vbWFwcy9kaXIvP2FwaT0xJmRlc3RpbmF0aW9uPTE4LjQ0NTE3NjU1MzM1MjIsLTY2LjAxNjQwODMyODgzNTIiIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0idGV4dC1kZWNvcmF0aW9uOm5vbmU7IGNvbG9yOiMyYjZjYjA7Ij4KICAgICAgICAgICAgICAgIElzbGEgVmVyZGUgQmVhY2gsIFBSIDAwOTc5CiAgICAgICAgICAgIDwvYT4KICAgICAgICA8L2g0PgogICAgICAgIAogICAgICAgIDxkaXYgY2xhc3M9InNsaWRlc2hvdyI+CiAgICAgICAgICAgIDxpbWcgc3JjPSJodHRwczovL2dlbmVzaXNwZXJlejE5LmdpdGh1Yi5pby9sYXMtYnJpc2FzLWludGVyYWN0aXZlLW1hcC9pbWFnZXMvQ0FTQV9DT1NURVJBL3Byb3BlcnR5X2ltYWdlcy9pbWFnZV8xLlBORyIgY2xhc3M9InNsaWRlIiBzdHlsZT0id2lkdGg6MTAwJTsgZGlzcGxheTpub25lOyBib3JkZXItcmFkaXVzOjhweDsiPgogICAgICAgIDwvZGl2PgoKICAgICAgICA8c2NyaXB0PgogICAgICAgIHZhciBzbGlkZXMgPSBkb2N1bWVudC5jdXJyZW50U2NyaXB0LnByZXZpb3VzRWxlbWVudFNpYmxpbmcucXVlcnlTZWxlY3RvckFsbCgnLnNsaWRlJyk7CiAgICAgICAgbGV0IGluZGV4ID0gMDsKICAgICAgICBmdW5jdGlvbiBzaG93U2xpZGVzKCkgewogICAgICAgICAgICBzbGlkZXMuZm9yRWFjaChzID0+IHMuc3R5bGUuZGlzcGxheSA9ICJub25lIik7CiAgICAgICAgICAgIHNsaWRlc1tpbmRleF0uc3R5bGUuZGlzcGxheSA9ICJibG9jayI7CiAgICAgICAgICAgIGluZGV4ID0gKGluZGV4ICsgMSkgJSBzbGlkZXMubGVuZ3RoOwogICAgICAgICAgICBzZXRUaW1lb3V0KHNob3dTbGlkZXMsIDE1MDApOwogICAgICAgIH0KICAgICAgICBzaG93U2xpZGVzKCk7CiAgICAgICAgPC9zY3JpcHQ+CiAgICAgICAgCiAgICAgICAgPHA+RmVlbCB0aGUgY29tZm9ydHMgb2YgaG9tZSBhdCBDYXNhIENvc3RlcmEsIElzbGEgVmVyZGUgQmVhY2gsIEFwYXJ0bWVudHMgYnkgTWFycmlvdHQgQm9udm95LiBFbmpveSBicmVhdGh0YWtpbmcgdmlld3Mgb2YgdGhlIEF0bGFudGljIE9jZWFuIG9yIFNhbiBKdWFu4oCZcyB1cmJhbiBvYXNpcy4gT3VyIGNvYXN0YWwgcmV0cmVhdCwganVzdCBzdGVwcyBmcm9tIElzbGEgVmVyZGUgYmVhY2gsIG9mZmVycyBhIHRydWx5IGluZGVwZW5kZW50IHN0YXkgd2l0aCBhcGFydG1lbnQtc3R5bGUgYWNjb21tb2RhdGlvbnMgZGVzaWduZWQgdG8gbWVldCB5b3VyIG5lZWRzLiBDaG9vc2UgZnJvbSBTdHVkaW8sIE9uZS0gb3IgVHdvLUJlZHJvb20gQXBhcnRtZW50cywgZWFjaCB1bml0IGhhcyBhIGZ1bGwga2l0Y2hlbiBlcXVpcHBlZCB3aXRoIGV2ZXJ5dGhpbmcgeW91IG5lZWQgdG8gZW5qb3kgeW91ciBtb3JuaW5nIGNvZmZlZSB0byBwcmVwYXJpbmcgaG9tZSBjb29rZWQgbWVhbHMuIENlbnRyYWxseSBsb2NhdGVkIG5lYXIgdG9wIGF0dHJhY3Rpb25zIHN1Y2ggYXMgT2xkIFNhbiBKdWFuLCBULU1vYmlsZSBEaXN0cmljdCwgdGhlIGZhbW91cyBQacOxb25lcyBraW9za3MsIG11bHRpcGxlIENhcmliYmVhbiBiZWFjaGVzLCAgcmVzdGF1cmFudHMsIHByZW1pZXIgc2hvcHBpbmcgbWFsbHMsIGFuZCB0aGUgU2FuIEp1YW4gSW50ZXJuYXRpb25hbCBBaXJwb3J0LiBPdXIgaW52aXRpbmcgYXRtb3NwaGVyZSwgZW5yaWNoZWQgd2l0aCBsb2NhbCBjaGFybSwgZ3VhcmFudGVlcyBhIG1lbW9yYWJsZSBleHBlcmllbmNlLjwvcD4KICAgICAgICAKICAgIDxwPjxzdHJvbmc+Q2F0ZWdvcnk6PC9zdHJvbmc+IEhPU1BJVEFMSVRZIEFORCBSRVNJREVOVElBTDwvcD4KICAgIDxwPjxzdHJvbmc+U3EgRnQ6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+QXZhaWxhYmxlOjwvc3Ryb25nPiBuYW48L3A+CiAgICA8cD48c3Ryb25nPlR5cGU6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+Q29zdDo8L3N0cm9uZz4gJG5hbjwvcD4KICAgIAogICAgICAgIAogICAgPGEgaHJlZj0ibWFpbHRvOnNhbGVzQGxhc2JyaXNhc3Byb3BlcnR5LmNvbT9zdWJqZWN0PUlucXVpcnklMjBhYm91dCUyMENBU0ElMjBDT1NURVJBJTIwLSUyMEFwYXJ0bWVudHMlMjBCeSUyME1hcnJpb3R0JTIwQm9udm95JmJvZHk9SGVsbG8lMkMlMjBJJTIwYW0lMjBpbnRlcmVzdGVkJTIwaW4lMjBDQVNBJTIwQ09TVEVSQSUyMC0lMjBBcGFydG1lbnRzJTIwQnklMjBNYXJyaW90dCUyMEJvbnZveSUyMGxvY2F0ZWQlMjBhdCUyMElzbGElMjBWZXJkZSUyMEJlYWNoJTJDJTIwUFIlMjAwMDk3OS4iIHRhcmdldD0iX2JsYW5rIgogICAgICAgc3R5bGU9IgogICAgICAgICAgICBkaXNwbGF5OmlubGluZS1ibG9jazsKICAgICAgICAgICAgbWFyZ2luLXRvcDoxMHB4OwogICAgICAgICAgICBwYWRkaW5nOjhweCAxMnB4OwogICAgICAgICAgICBiYWNrZ3JvdW5kOiMwMDgzYzQ7CiAgICAgICAgICAgIGNvbG9yOndoaXRlOwogICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246bm9uZTsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czo2cHg7CiAgICAgICAgICAgIGZvbnQtc2l6ZToxMnB4OwogICAgICAgICAgICBmb250LXdlaWdodDo1MDA7CiAgICAgICAiPgogICAgICAgUmVxdWVzdCBQcm9wZXJ0eQogICAgPC9hPgogICAgCiAgICA8L2Rpdj4KICAgIA==" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_84c4b3d042963fcd859d814ef688313f.setContent(i_frame_8cc9e837225f77c89f2dff217cc0758a);
+            
+        
+
+        marker_bf16f0157effed847aee5ad5d99f88da.bindPopup(popup_84c4b3d042963fcd859d814ef688313f)
+        ;
+
+        
+    
+    
+                marker_bf16f0157effed847aee5ad5d99f88da.setIcon(div_icon_8dc0b6855eb72d1ef952df8adfb7cc61);
+            
+    
+            var marker_e733cf1dd361973eb5cb139c2aedea1a = L.marker(
+                [18.4294260720077, -66.0724609865057],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_ad05577bf96ca2eaa3a270d3fbc02cb9 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_9d2b2de7cdea4b519417c81f2fdf2b7f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_fdd78cfcd22447a100ca4f7db0e48553 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+REVTQVJST0xMT1MgSU5NT0JJTElBUklPUyBIQVRPIFJFWTwvaDM+CiAgICAgICAgPGg0IHN0eWxlPSJtYXJnaW46NHB4IDA7Ij4KICAgICAgICAgICAgPGEgaHJlZj0iaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9tYXBzL2Rpci8/YXBpPTEmZGVzdGluYXRpb249MTguNDI5NDI2MDcyMDA3NywtNjYuMDcyNDYwOTg2NTA1NyIgdGFyZ2V0PSJfYmxhbmsiIHN0eWxlPSJ0ZXh0LWRlY29yYXRpb246bm9uZTsgY29sb3I6IzJiNmNiMDsiPgogICAgICAgICAgICAgICAgSGF0byBSZXksIFBSIDAwOTE4CiAgICAgICAgICAgIDwvYT4KICAgICAgICA8L2g0PgogICAgICAgIAogICAgICAgIDxkaXYgY2xhc3M9InNsaWRlc2hvdyI+CiAgICAgICAgICAgIDxpbWcgc3JjPSJodHRwczovL2dlbmVzaXNwZXJlejE5LmdpdGh1Yi5pby9sYXMtYnJpc2FzLWludGVyYWN0aXZlLW1hcC9pbWFnZXMvREVTQVJST0xMT1NfSU5NT0JJTElBUklPU19IQVRPX1JFWS9wcm9wZXJ0eV9pbWFnZXMvaW1hZ2VfMS5QTkciIGNsYXNzPSJzbGlkZSIgc3R5bGU9IndpZHRoOjEwMCU7IGRpc3BsYXk6bm9uZTsgYm9yZGVyLXJhZGl1czo4cHg7Ij4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPHNjcmlwdD4KICAgICAgICB2YXIgc2xpZGVzID0gZG9jdW1lbnQuY3VycmVudFNjcmlwdC5wcmV2aW91c0VsZW1lbnRTaWJsaW5nLnF1ZXJ5U2VsZWN0b3JBbGwoJy5zbGlkZScpOwogICAgICAgIGxldCBpbmRleCA9IDA7CiAgICAgICAgZnVuY3Rpb24gc2hvd1NsaWRlcygpIHsKICAgICAgICAgICAgc2xpZGVzLmZvckVhY2gocyA9PiBzLnN0eWxlLmRpc3BsYXkgPSAibm9uZSIpOwogICAgICAgICAgICBzbGlkZXNbaW5kZXhdLnN0eWxlLmRpc3BsYXkgPSAiYmxvY2siOwogICAgICAgICAgICBpbmRleCA9IChpbmRleCArIDEpICUgc2xpZGVzLmxlbmd0aDsKICAgICAgICAgICAgc2V0VGltZW91dChzaG93U2xpZGVzLCAxNTAwKTsKICAgICAgICB9CiAgICAgICAgc2hvd1NsaWRlcygpOwogICAgICAgIDwvc2NyaXB0PgogICAgICAgIAogICAgICAgIDxwPkJlYXV0aWZ1bCBidWlsZGluZ3Mgd2l0aCBvZmZpY2UgYW5kIHdhcmVob3VzZSBzcGFjZXMgYXZhaWxhYmxlLiBTdHVubmluZyBjYW1wdXMtbGlrZSBhdG1vc3BoZXJlIGNsb3NlIHRvIGV2ZXJ5dGhpbmcgeW91IG5lZWQuCgpDb252ZW5pZW50IGxvY2F0aW9uIG5lYXIgdGhlIGxhcmdlc3QgbWFsbCBvbiB0aGUgSXNsYW5kLCBjb3VudGxlc3MgcmVzdGF1cmFudHMsIGFuZCBIYXRvIFJleSdzIHVuaXF1ZSBiYW5raW5nIGRpc3RyaWN0LjwvcD4KICAgICAgICAKICAgIDxwPjxzdHJvbmc+Q2F0ZWdvcnk6PC9zdHJvbmc+IFdBUkVIT1VTRSBBTkQgT0ZGSUNFIEJVSUxESU5HUzwvcD4KICAgIDxwPjxzdHJvbmc+U3EgRnQ6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+QXZhaWxhYmxlOjwvc3Ryb25nPiBuYW48L3A+CiAgICA8cD48c3Ryb25nPlR5cGU6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+Q29zdDo8L3N0cm9uZz4gJG5hbjwvcD4KICAgIAogICAgICAgIAogICAgPGEgaHJlZj0ibWFpbHRvOnNhbGVzQGxhc2JyaXNhc3Byb3BlcnR5LmNvbT9zdWJqZWN0PUlucXVpcnklMjBhYm91dCUyMERFU0FSUk9MTE9TJTIwSU5NT0JJTElBUklPUyUyMEhBVE8lMjBSRVkmYm9keT1IZWxsbyUyQyUyMEklMjBhbSUyMGludGVyZXN0ZWQlMjBpbiUyMERFU0FSUk9MTE9TJTIwSU5NT0JJTElBUklPUyUyMEhBVE8lMjBSRVklMjBsb2NhdGVkJTIwYXQlMjBIYXRvJTIwUmV5JTJDJTIwUFIlMjAwMDkxOC4iIHRhcmdldD0iX2JsYW5rIgogICAgICAgc3R5bGU9IgogICAgICAgICAgICBkaXNwbGF5OmlubGluZS1ibG9jazsKICAgICAgICAgICAgbWFyZ2luLXRvcDoxMHB4OwogICAgICAgICAgICBwYWRkaW5nOjhweCAxMnB4OwogICAgICAgICAgICBiYWNrZ3JvdW5kOiMwMDgzYzQ7CiAgICAgICAgICAgIGNvbG9yOndoaXRlOwogICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246bm9uZTsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czo2cHg7CiAgICAgICAgICAgIGZvbnQtc2l6ZToxMnB4OwogICAgICAgICAgICBmb250LXdlaWdodDo1MDA7CiAgICAgICAiPgogICAgICAgUmVxdWVzdCBQcm9wZXJ0eQogICAgPC9hPgogICAgCiAgICA8L2Rpdj4KICAgIA==" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_9d2b2de7cdea4b519417c81f2fdf2b7f.setContent(i_frame_fdd78cfcd22447a100ca4f7db0e48553);
+            
+        
+
+        marker_e733cf1dd361973eb5cb139c2aedea1a.bindPopup(popup_9d2b2de7cdea4b519417c81f2fdf2b7f)
+        ;
+
+        
+    
+    
+                marker_e733cf1dd361973eb5cb139c2aedea1a.setIcon(div_icon_ad05577bf96ca2eaa3a270d3fbc02cb9);
+            
+    
+            var marker_c367da1ec4f6c787f3de4e5743eea7af = L.marker(
+                [18.4081508367805, -66.1912734134942],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_0ee4c29ccf74e15047178c8596512c8c = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_71e6ee59d81fe34a049183b57aeec25c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_908cdea47fb7fa93bdc9103ae59302e9 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+REVTQVJST0xMT1MgSU5NT0JJTElBUklPUyBCQVlBTU9OPC9oMz4KICAgICAgICA8aDQgc3R5bGU9Im1hcmdpbjo0cHggMDsiPgogICAgICAgICAgICA8YSBocmVmPSJodHRwczovL3d3dy5nb29nbGUuY29tL21hcHMvZGlyLz9hcGk9MSZkZXN0aW5hdGlvbj0xOC40MDgxNTA4MzY3ODA1LC02Ni4xOTEyNzM0MTM0OTQyIiB0YXJnZXQ9Il9ibGFuayIgc3R5bGU9InRleHQtZGVjb3JhdGlvbjpub25lOyBjb2xvcjojMmI2Y2IwOyI+CiAgICAgICAgICAgICAgICBCYXlhbcOzbiwgUFIgMDA5NjEKICAgICAgICAgICAgPC9hPgogICAgICAgIDwvaDQ+CiAgICAgICAgCiAgICAgICAgPGRpdiBjbGFzcz0ic2xpZGVzaG93Ij4KICAgICAgICAgICAgPGltZyBzcmM9Imh0dHBzOi8vZ2VuZXNpc3BlcmV6MTkuZ2l0aHViLmlvL2xhcy1icmlzYXMtaW50ZXJhY3RpdmUtbWFwL2ltYWdlcy9ERVNBUlJPTExPU19JTk1PQklMSUFSSU9TX0JBWUFNT04vcHJvcGVydHlfaW1hZ2VzL2ltYWdlXzEuUE5HIiBjbGFzcz0ic2xpZGUiIHN0eWxlPSJ3aWR0aDoxMDAlOyBkaXNwbGF5Om5vbmU7IGJvcmRlci1yYWRpdXM6OHB4OyI+CiAgICAgICAgPC9kaXY+CgogICAgICAgIDxzY3JpcHQ+CiAgICAgICAgdmFyIHNsaWRlcyA9IGRvY3VtZW50LmN1cnJlbnRTY3JpcHQucHJldmlvdXNFbGVtZW50U2libGluZy5xdWVyeVNlbGVjdG9yQWxsKCcuc2xpZGUnKTsKICAgICAgICBsZXQgaW5kZXggPSAwOwogICAgICAgIGZ1bmN0aW9uIHNob3dTbGlkZXMoKSB7CiAgICAgICAgICAgIHNsaWRlcy5mb3JFYWNoKHMgPT4gcy5zdHlsZS5kaXNwbGF5ID0gIm5vbmUiKTsKICAgICAgICAgICAgc2xpZGVzW2luZGV4XS5zdHlsZS5kaXNwbGF5ID0gImJsb2NrIjsKICAgICAgICAgICAgaW5kZXggPSAoaW5kZXggKyAxKSAlIHNsaWRlcy5sZW5ndGg7CiAgICAgICAgICAgIHNldFRpbWVvdXQoc2hvd1NsaWRlcywgMTUwMCk7CiAgICAgICAgfQogICAgICAgIHNob3dTbGlkZXMoKTsKICAgICAgICA8L3NjcmlwdD4KICAgICAgICAKICAgICAgICA8cD5MZXQgdXMgc2hvdyB5b3UgaG93IHlvdXIgb3BlcmF0aW9uIGNhbiB0cnVseSBiZSBzcGFjaW91cyBhbmQgb3JnYW5pemVkLiBQcml2aWxlZ2VkIGxvY2F0aW9uIGluIEJheWFtb24sIHdpdGggcXVpY2sgYWNjZXNzIHRvIG1haW4gaGlnaHdheXMgYW5kIG1pbnV0ZXMgYXdheSBmcm9tIHRoZSBNZXRybyBBcmVhLjwvcD4KICAgICAgICAKICAgIDxwPjxzdHJvbmc+Q2F0ZWdvcnk6PC9zdHJvbmc+IFdBUkVIT1VTRSBBTkQgT0ZGSUNFIEJVSUxESU5HUzwvcD4KICAgIDxwPjxzdHJvbmc+U3EgRnQ6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+QXZhaWxhYmxlOjwvc3Ryb25nPiBuYW48L3A+CiAgICA8cD48c3Ryb25nPlR5cGU6PC9zdHJvbmc+IG5hbjwvcD4KICAgIDxwPjxzdHJvbmc+Q29zdDo8L3N0cm9uZz4gJG5hbjwvcD4KICAgIAogICAgICAgIAogICAgPGEgaHJlZj0ibWFpbHRvOnNhbGVzQGxhc2JyaXNhc3Byb3BlcnR5LmNvbT9zdWJqZWN0PUlucXVpcnklMjBhYm91dCUyMERFU0FSUk9MTE9TJTIwSU5NT0JJTElBUklPUyUyMEJBWUFNT04mYm9keT1IZWxsbyUyQyUyMEklMjBhbSUyMGludGVyZXN0ZWQlMjBpbiUyMERFU0FSUk9MTE9TJTIwSU5NT0JJTElBUklPUyUyMEJBWUFNT04lMjBsb2NhdGVkJTIwYXQlMjBCYXlhbSVDMyVCM24lMkMlMjBQUiUyMDAwOTYxLiIgdGFyZ2V0PSJfYmxhbmsiCiAgICAgICBzdHlsZT0iCiAgICAgICAgICAgIGRpc3BsYXk6aW5saW5lLWJsb2NrOwogICAgICAgICAgICBtYXJnaW4tdG9wOjEwcHg7CiAgICAgICAgICAgIHBhZGRpbmc6OHB4IDEycHg7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IzAwODNjNDsKICAgICAgICAgICAgY29sb3I6d2hpdGU7CiAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjpub25lOwogICAgICAgICAgICBib3JkZXItcmFkaXVzOjZweDsKICAgICAgICAgICAgZm9udC1zaXplOjEycHg7CiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OjUwMDsKICAgICAgICI+CiAgICAgICBSZXF1ZXN0IFByb3BlcnR5CiAgICA8L2E+CiAgICAKICAgIDwvZGl2PgogICAg" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_71e6ee59d81fe34a049183b57aeec25c.setContent(i_frame_908cdea47fb7fa93bdc9103ae59302e9);
+            
+        
+
+        marker_c367da1ec4f6c787f3de4e5743eea7af.bindPopup(popup_71e6ee59d81fe34a049183b57aeec25c)
+        ;
+
+        
+    
+    
+                marker_c367da1ec4f6c787f3de4e5743eea7af.setIcon(div_icon_0ee4c29ccf74e15047178c8596512c8c);
+            
+    
+            var marker_14629c8dc15f0149a376ead4dbcf813e = L.marker(
+                [18.4380873990135, -66.1197982497066],
+                {
+}
+            ).addTo(marker_cluster_ebeba7ccf62071933284f782555f0e05);
+        
+    
+            var div_icon_12022148f40d16531dd745e02847fcdf = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                position: relative;\n                width: 70px;\n                height: 80px;\n                transform: translate(-50%, -100%);\n            \"\u003e\n\n                \u003c!-- LOGO --\u003e\n                \u003cimg src=\"https://genesisperez19.github.io/las-brisas-interactive-map/images/logo/logo_LBPM.png\"\n                    style=\"\n                        position:absolute;\n                        top:30px;   /* \ud83d\udc48 AJUSTA ESTO para bajarlo/subirlo */\n                        left:50%;\n                        transform:translateX(-50%);\n\n                        width:32px;\n                        height:auto;\n                        z-index:2;\n\n                        /* borde siguiendo silueta */\n                        filter:\n                            drop-shadow(1px 0 0 black)\n                            drop-shadow(-1px 0 0 black)\n                            drop-shadow(0 1px 0 black)\n                            drop-shadow(0 -1px 0 black);\n                    \"\n                \u003e\n\n                \u003c!-- punta --\u003e\n                \n                \u003cdiv style=\"\n                    position: absolute;\n                    bottom: 0px;\n                    left: 50%;\n                    transform: translateX(-50%);\n                    width: 0;\n                    height: 0;\n                    border-left: 10px solid transparent;\n                    border-right: 10px solid transparent;\n                    border-top: 14px solid black;\n                    z-index:1;\n                \"\u003e\u003c/div\u003e\n\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_a8837b1aa63cde704ada3000a1d6ee48 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_3e3f9597074a232f27bc037d6beeb396 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI1MHB4Ij4KICAgICAgICA8aDM+Wk9OQSBMSUJSRSBERSBDT01FUkNJTyA2MTwvaDM+CiAgICAgICAgPGg0IHN0eWxlPSJtYXJnaW46NHB4IDA7Ij4KICAgICAgICAgICAgPGEgaHJlZj0iaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9tYXBzL2Rpci8/YXBpPTEmZGVzdGluYXRpb249MTguNDM4MDg3Mzk5MDEzNSwtNjYuMTE5Nzk4MjQ5NzA2NiIgdGFyZ2V0PSJfYmxhbmsiIHN0eWxlPSJ0ZXh0LWRlY29yYXRpb246bm9uZTsgY29sb3I6IzJiNmNiMDsiPgogICAgICAgICAgICAgICAgR3VheW5hYm8sIFBSIDAwOTYyCiAgICAgICAgICAgIDwvYT4KICAgICAgICA8L2g0PgogICAgICAgIAogICAgICAgIDxkaXYgY2xhc3M9InNsaWRlc2hvdyI+CiAgICAgICAgICAgIDxpbWcgc3JjPSJodHRwczovL2dlbmVzaXNwZXJlejE5LmdpdGh1Yi5pby9sYXMtYnJpc2FzLWludGVyYWN0aXZlLW1hcC9pbWFnZXMvWk9OQV9MSUJSRV9ERV9DT01FUkNJT182MS9wcm9wZXJ0eV9pbWFnZXMvaW1hZ2VfMS5QTkciIGNsYXNzPSJzbGlkZSIgc3R5bGU9IndpZHRoOjEwMCU7IGRpc3BsYXk6bm9uZTsgYm9yZGVyLXJhZGl1czo4cHg7Ij4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPHNjcmlwdD4KICAgICAgICB2YXIgc2xpZGVzID0gZG9jdW1lbnQuY3VycmVudFNjcmlwdC5wcmV2aW91c0VsZW1lbnRTaWJsaW5nLnF1ZXJ5U2VsZWN0b3JBbGwoJy5zbGlkZScpOwogICAgICAgIGxldCBpbmRleCA9IDA7CiAgICAgICAgZnVuY3Rpb24gc2hvd1NsaWRlcygpIHsKICAgICAgICAgICAgc2xpZGVzLmZvckVhY2gocyA9PiBzLnN0eWxlLmRpc3BsYXkgPSAibm9uZSIpOwogICAgICAgICAgICBzbGlkZXNbaW5kZXhdLnN0eWxlLmRpc3BsYXkgPSAiYmxvY2siOwogICAgICAgICAgICBpbmRleCA9IChpbmRleCArIDEpICUgc2xpZGVzLmxlbmd0aDsKICAgICAgICAgICAgc2V0VGltZW91dChzaG93U2xpZGVzLCAxNTAwKTsKICAgICAgICB9CiAgICAgICAgc2hvd1NsaWRlcygpOwogICAgICAgIDwvc2NyaXB0PgogICAgICAgIAogICAgICAgIDxwPk5vdCBmb3IgTGVhc2UuIFRoZSBQcm9wZXJ0eSBoYXMgYSBsYW5kIGFyZWEgb2YgfjE2OSBhY3JlcywgZGl2aWRlZCBpbnRvIDEyIHN0b3JhZ2UgYnVpbGRpbmdzIHdpdGggaGlnaCBjZWlsaW5ncyBhbmQgdW5sb2FkaW5nIHBsYXRmb3JtcywgMyBvZmZpY2UgYnVpbGRpbmdzLCBhbmQgYSBmYWNpbGl0eSBtYWludGVuYW5jZSBidWlsZGluZy4gVGhlIHdhcmVob3VzZSBzcGFjZSB0b3RhbHMgYXBwcm94aW1hdGVseSAxLDM2MCwwMDAgc3EgZnQuPC9wPgogICAgICAgIAogICAgPHA+PHN0cm9uZz5DYXRlZ29yeTo8L3N0cm9uZz4gV0FSRUhPVVNFIEFORCBPRkZJQ0UgQlVJTERJTkdTPC9wPgogICAgPHA+PHN0cm9uZz5TcSBGdDo8L3N0cm9uZz4gMSwzNjAsMDAwLjA8L3A+CiAgICA8cD48c3Ryb25nPkF2YWlsYWJsZTo8L3N0cm9uZz4gbmFuPC9wPgogICAgPHA+PHN0cm9uZz5UeXBlOjwvc3Ryb25nPiBuYW48L3A+CiAgICA8cD48c3Ryb25nPkNvc3Q6PC9zdHJvbmc+ICRuYW48L3A+CiAgICAKICAgICAgICAKICAgIDxhIGhyZWY9Im1haWx0bzpzYWxlc0BsYXNicmlzYXNwcm9wZXJ0eS5jb20/c3ViamVjdD1JbnF1aXJ5JTIwYWJvdXQlMjBaT05BJTIwTElCUkUlMjBERSUyMENPTUVSQ0lPJTIwNjEmYm9keT1IZWxsbyUyQyUyMEklMjBhbSUyMGludGVyZXN0ZWQlMjBpbiUyMFpPTkElMjBMSUJSRSUyMERFJTIwQ09NRVJDSU8lMjA2MSUyMGxvY2F0ZWQlMjBhdCUyMEd1YXluYWJvJTJDJTIwUFIlMjAwMDk2Mi4iIHRhcmdldD0iX2JsYW5rIgogICAgICAgc3R5bGU9IgogICAgICAgICAgICBkaXNwbGF5OmlubGluZS1ibG9jazsKICAgICAgICAgICAgbWFyZ2luLXRvcDoxMHB4OwogICAgICAgICAgICBwYWRkaW5nOjhweCAxMnB4OwogICAgICAgICAgICBiYWNrZ3JvdW5kOiMwMDgzYzQ7CiAgICAgICAgICAgIGNvbG9yOndoaXRlOwogICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246bm9uZTsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czo2cHg7CiAgICAgICAgICAgIGZvbnQtc2l6ZToxMnB4OwogICAgICAgICAgICBmb250LXdlaWdodDo1MDA7CiAgICAgICAiPgogICAgICAgUmVxdWVzdCBQcm9wZXJ0eQogICAgPC9hPgogICAgCiAgICA8L2Rpdj4KICAgIA==" width="270" style="border:none !important;" height="400"></iframe>`)[0];
+                popup_a8837b1aa63cde704ada3000a1d6ee48.setContent(i_frame_3e3f9597074a232f27bc037d6beeb396);
+            
+        
+
+        marker_14629c8dc15f0149a376ead4dbcf813e.bindPopup(popup_a8837b1aa63cde704ada3000a1d6ee48)
+        ;
+
+        
+    
+    
+                marker_14629c8dc15f0149a376ead4dbcf813e.setIcon(div_icon_12022148f40d16531dd745e02847fcdf);
+            
+    
+            marker_cluster_ebeba7ccf62071933284f782555f0e05.addTo(map_c559abd2c9a89d1fb67bee53f9210ff9);
+        
+</script>
+</html>
